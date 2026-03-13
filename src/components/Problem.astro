@@ -1,0 +1,91 @@
+---
+---
+<section class="problem" id="problem">
+  <div class="problem-label">
+    <span class="label">The Problem</span>
+  </div>
+  <div class="problem-body">
+    <h2 class="problem-heading">
+      OFF-THE-SHELF<br/>
+      SOFTWARE WASN'T<br/>
+      BUILT FOR<br/>
+      <span class="accent">YOUR BUSINESS</span>
+    </h2>
+    <div class="problem-text">
+      <p>
+        Most enterprise software is designed for the average company. If your
+        workflows, approval chains, or reporting needs don't match that average
+        — and they rarely do — you spend more time working around the tool
+        than with it.
+      </p>
+      <p>
+        The result: duplicate spreadsheets, manual workarounds, fragmented
+        data, and a team that's quietly given up on the system.
+      </p>
+      <div class="problem-stat">
+        <span class="stat-number accent">73%</span>
+        <span class="label">of enterprise software implementations fail to meet operational goals</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .problem {
+    border-bottom: var(--border);
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  .problem-label {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    padding: var(--space-lg) var(--space);
+    border-right: var(--border);
+    display: flex;
+    align-items: center;
+  }
+
+  .problem-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .problem-heading {
+    font-size: var(--font-size-h2);
+    padding: var(--space-xl) var(--space-lg);
+    border-right: var(--border);
+    align-self: center;
+  }
+
+  .problem-text {
+    padding: var(--space-xl) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+  }
+
+  .problem-stat {
+    margin-top: var(--space);
+    border-top: var(--border-accent);
+    padding-top: var(--space);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 768px) {
+    .problem { grid-template-columns: 1fr; }
+    .problem-label { writing-mode: horizontal-tb; transform: none; border-right: none; border-bottom: var(--border); }
+    .problem-body { grid-template-columns: 1fr; }
+    .problem-heading { border-right: none; border-bottom: var(--border); padding: var(--space-lg); }
+    .problem-text { padding: var(--space-lg); }
+  }
+</style>

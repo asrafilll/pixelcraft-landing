@@ -1,0 +1,105 @@
+---
+---
+<section class="inaction">
+  <div class="inaction-inner">
+    <div class="inaction-label">
+      <span class="label">The Cost of Inaction</span>
+    </div>
+    <div class="inaction-body">
+      <h2 class="inaction-title">
+        THE LONGER<br/>
+        YOU WAIT,<br/>
+        THE MORE<br/>
+        <span class="accent">IT COSTS</span>
+      </h2>
+      <div class="inaction-text">
+        <p>
+          Inefficient internal tooling is not a static problem. As your
+          organization grows, the friction scales with it. What takes one
+          team an extra hour today takes ten teams an extra hour tomorrow.
+        </p>
+        <p>
+          The organizations that build the right internal infrastructure
+          early gain a compounding operational advantage. Those that defer
+          the investment find themselves managing increasingly complex
+          workarounds while competitors move faster with less friction.
+        </p>
+        <p class="inaction-closer">
+          The question is not whether your operations need better tooling.
+          It is how long inefficiency will be tolerated before it becomes
+          a strategic liability.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .inaction {
+    border-bottom: var(--border);
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  .inaction-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  .inaction-label {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    padding: var(--space-lg) var(--space);
+    border-right: 4px solid rgba(255,255,255,0.3);
+    display: flex;
+    align-items: center;
+  }
+
+  .inaction-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inaction-title {
+    font-size: var(--font-size-h2);
+    padding: var(--space-xl) var(--space-lg);
+    border-right: 4px solid rgba(255,255,255,0.3);
+    color: var(--color-bg);
+  }
+
+  .inaction-title .accent {
+    color: var(--color-bg);
+    -webkit-text-stroke: 2px var(--color-bg);
+    color: transparent;
+  }
+
+  .inaction-text {
+    padding: var(--space-xl) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+  }
+
+  .inaction-text p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .inaction-closer {
+    font-family: var(--font-display);
+    font-size: 1rem !important;
+    text-transform: uppercase;
+    line-height: 1.3 !important;
+    border-top: 4px solid rgba(255,255,255,0.3);
+    padding-top: var(--space);
+    margin-top: var(--space);
+  }
+
+  @media (max-width: 768px) {
+    .inaction-inner { grid-template-columns: 1fr; }
+    .inaction-label { writing-mode: horizontal-tb; transform: none; border-right: none; border-bottom: 4px solid rgba(255,255,255,0.3); }
+    .inaction-body { grid-template-columns: 1fr; }
+    .inaction-title { border-right: none; border-bottom: 4px solid rgba(255,255,255,0.3); padding: var(--space-lg); }
+    .inaction-text { padding: var(--space-lg); }
+  }
+</style>

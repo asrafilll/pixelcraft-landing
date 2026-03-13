@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import WhatWeDo from '../components/WhatWeDo.astro';
+import WhoWeServe from '../components/WhoWeServe.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import WhyCustom from '../components/WhyCustom.astro';
+import WhatWeBuilt from '../components/WhatWeBuilt.astro';
+import CostOfInaction from '../components/CostOfInaction.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout>
+  <Nav />
+  <main>
+    <Hero />          <!-- S1: Headline + CTA -->
+    <Problem />       <!-- S2: Off-the-shelf pain -->
+    <WhatWeDo />      <!-- S3: Core services -->
+    <WhoWeServe />    <!-- S4: Target industries -->
+    <HowItWorks />    <!-- S5: 3-step process -->
+    <WhyCustom />     <!-- S6: Hidden cost argument -->
+    <WhatWeBuilt />   <!-- S7: Use case examples -->
+    <CostOfInaction /> <!-- S8: Urgency without hard sell -->
+    <Contact />       <!-- S9: Soft close + email -->
+  </main>
+</Layout>

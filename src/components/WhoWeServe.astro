@@ -1,0 +1,112 @@
+---
+const industries = [
+  'Manufacturing',
+  'Logistics & Supply Chain',
+  'Financial Services',
+  'Healthcare Administration',
+  'Professional Services',
+  'HR & People Operations',
+  'Field Operations',
+  'Finance & Compliance',
+];
+---
+
+<section class="who" id="who-we-build-for">
+  <div class="who-left">
+    <span class="label">Who We Build For</span>
+    <h2 class="who-title">
+      BUILT FOR<br/>
+      OPERATIONS,<br/>
+      FINANCE, HR,<br/>
+      <span class="accent">AND FIELD TEAMS</span>
+    </h2>
+    <p class="who-body">
+      We work with enterprises across industries where internal operations
+      are complex. If your teams rely on a process that currently lives in
+      a spreadsheet, an email chain, or a tool that almost fits — that's
+      where we start.
+    </p>
+  </div>
+
+  <div class="who-right">
+    <div class="industries-label label">Industries</div>
+    <ul class="industries-list">
+      {industries.map((ind) => (
+        <li class="industry-item">
+          <span class="industry-arrow accent">→</span>
+          <span>{ind}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .who {
+    border-bottom: var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .who-left {
+    padding: var(--space-xl) var(--space-lg);
+    border-right: var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .who-left .label { color: var(--color-accent); }
+
+  .who-title {
+    font-size: var(--font-size-h2);
+  }
+
+  .who-body {
+    max-width: 42ch;
+    line-height: 1.7;
+  }
+
+  .who-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .industries-label {
+    padding: var(--space);
+    border-bottom: var(--border);
+  }
+
+  .industries-list {
+    list-style: none;
+    flex: 1;
+  }
+
+  .industry-item {
+    display: flex;
+    gap: var(--space);
+    align-items: center;
+    padding: var(--space) var(--space-lg);
+    border-bottom: var(--border);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .industry-item:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  .industry-item:hover .industry-arrow {
+    color: var(--color-bg);
+  }
+
+  .industry-arrow { font-size: 1.2rem; }
+
+  @media (max-width: 768px) {
+    .who { grid-template-columns: 1fr; }
+    .who-left { border-right: none; border-bottom: var(--border); padding: var(--space-lg); }
+  }
+</style>

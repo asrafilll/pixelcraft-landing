@@ -1,0 +1,132 @@
+---
+const projects = [
+  {
+    tag: 'Field Operations',
+    title: 'Field Inspection Tool',
+    desc: 'A mobile application that replaced paper-based inspection forms for an operations team. Reports generate automatically; sign-offs are captured in real time.',
+    stack: ['Mobile', 'Offline-first', 'Auto-reporting'],
+  },
+  {
+    tag: 'Finance & Procurement',
+    title: 'Internal Procurement Dashboard',
+    desc: 'A web portal consolidating procurement requests, vendor approvals, and budget tracking across multiple departments — replacing a multi-spreadsheet process that required manual reconciliation.',
+    stack: ['Web App', 'Multi-dept', 'Budget Tracking'],
+  },
+  {
+    tag: 'HR & People Ops',
+    title: 'HR Onboarding Platform',
+    desc: 'A structured onboarding workflow tool that guides new hires through compliance, access provisioning, and team introductions — reducing HR coordination time significantly.',
+    stack: ['Workflow', 'Compliance', 'Access Management'],
+  },
+  {
+    tag: 'Executive Reporting',
+    title: 'Executive Reporting Suite',
+    desc: 'A real-time dashboard aggregating operational KPIs from multiple data sources, formatted for C-suite review without manual preparation each week.',
+    stack: ['Dashboard', 'Real-time', 'Multi-source'],
+  },
+];
+---
+
+<section class="built" id="what-we-built">
+  <div class="built-header">
+    <span class="label">What We've Built</span>
+    <h2 class="built-title">
+      APPLICATIONS THAT SOLVE<br/>
+      <span class="accent">REAL OPERATIONAL PROBLEMS</span>
+    </h2>
+  </div>
+
+  <div class="projects-grid">
+    {projects.map((p) => (
+      <article class="project-card">
+        <div class="project-top">
+          <span class="label project-tag">{p.tag}</span>
+        </div>
+        <h3 class="project-title">{p.title.toUpperCase()}</h3>
+        <p class="project-desc">{p.desc}</p>
+        <div class="project-stack">
+          {p.stack.map((s) => <span class="stack-tag label">{s}</span>)}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .built {
+    border-bottom: var(--border);
+  }
+
+  .built-header {
+    padding: var(--space-lg);
+    border-bottom: var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+  }
+
+  .built-header .label { color: var(--color-accent); }
+  .built-title { font-size: var(--font-size-h2); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-card {
+    padding: var(--space-lg);
+    border-right: var(--border);
+    border-bottom: var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+  }
+
+  .project-card:nth-child(even) { border-right: none; }
+  .project-card:nth-last-child(-n+2) { border-bottom: none; }
+
+  .project-card:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  .project-card:hover .project-tag,
+  .project-card:hover .stack-tag {
+    color: var(--color-accent);
+  }
+
+  .project-top { margin-bottom: 0.5rem; }
+  .project-tag { color: var(--color-accent); }
+
+  .project-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    line-height: 1.1;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: var(--space);
+    border-top: 2px solid currentColor;
+  }
+
+  .stack-tag {
+    border: 2px solid currentColor;
+    padding: 0.2rem 0.6rem;
+  }
+
+  @media (max-width: 640px) {
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card { border-right: none; border-bottom: var(--border); }
+    .project-card:last-child { border-bottom: none; }
+  }
+</style>

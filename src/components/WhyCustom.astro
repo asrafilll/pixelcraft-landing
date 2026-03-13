@@ -1,0 +1,132 @@
+---
+const costs = [
+  { label: 'Manual data extraction', impact: 'Time lost daily, compounding across teams' },
+  { label: 'Approval email chains', impact: 'Delays that cascade into missed deadlines' },
+  { label: 'Failed adoption', impact: 'Original investment lost; teams revert to spreadsheets' },
+  { label: 'Fragmented reporting', impact: 'Manual reconciliation before every decision' },
+];
+---
+
+<section class="why" id="why-custom">
+  <div class="why-left">
+    <span class="label">Why Custom</span>
+    <h2 class="why-title">
+      THE REAL COST OF<br/>
+      <span class="accent">THE WRONG TOOL</span>
+    </h2>
+    <p class="why-intro">
+      Licensing fees are visible. The hidden costs of a poor-fit tool are not.
+    </p>
+    <p class="why-body">
+      Custom software eliminates the gap between how your business works and
+      how your software works. The upfront investment is offset by the removal
+      of workarounds, the reduction in manual effort, and the increase in data
+      reliability across the organization.
+    </p>
+  </div>
+
+  <div class="why-right">
+    <div class="costs-label label">Hidden Cost Breakdown</div>
+    <ul class="costs-list">
+      {costs.map((c) => (
+        <li class="cost-item">
+          <span class="cost-label">{c.label}</span>
+          <span class="cost-impact label">{c.impact}</span>
+        </li>
+      ))}
+    </ul>
+    <div class="why-callout">
+      <span class="callout-text">When adoption fails, the original investment is lost entirely.</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why {
+    border-bottom: var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--color-bg-inv);
+    color: var(--color-text-inv);
+  }
+
+  .why-left {
+    padding: var(--space-xl) var(--space-lg);
+    border-right: var(--border-inv);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .why-left .label { color: var(--color-accent); }
+
+  .why-title { font-size: var(--font-size-h2); }
+
+  .why-intro {
+    font-size: 1rem;
+    font-style: italic;
+    border-left: var(--border-accent);
+    padding-left: var(--space);
+  }
+
+  .why-body {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 44ch;
+  }
+
+  .why-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .costs-label {
+    padding: var(--space);
+    border-bottom: var(--border-inv);
+    color: var(--color-accent);
+  }
+
+  .costs-list {
+    list-style: none;
+    flex: 1;
+  }
+
+  .cost-item {
+    padding: var(--space) var(--space-lg);
+    border-bottom: var(--border-inv);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .cost-item:hover {
+    background: var(--color-accent);
+  }
+
+  .cost-label {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .cost-impact {
+    opacity: 0.7;
+  }
+
+  .why-callout {
+    padding: var(--space) var(--space-lg);
+    border-top: var(--border-accent);
+  }
+
+  .callout-text {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .why { grid-template-columns: 1fr; }
+    .why-left { border-right: none; border-bottom: var(--border-inv); padding: var(--space-lg); }
+  }
+</style>

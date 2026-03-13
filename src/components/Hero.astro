@@ -1,0 +1,117 @@
+---
+---
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag label">Custom Enterprise Software</div>
+    <h1 class="hero-title">
+      SOFTWARE<br/>
+      BUILT FOR<br/>
+      <span class="accent">THE WAY YOUR</span><br/>
+      BUSINESS<br/>
+      ACTUALLY<br/>
+      WORKS
+    </h1>
+    <div class="hero-right">
+      <p class="hero-sub">
+        Pixelcraft designs and develops custom web and mobile applications
+        for enterprises — internal tools that fit your operations, not the
+        other way around.
+      </p>
+      <a href="mailto:hello@pixelcraft.dev" class="hero-cta">
+        <span class="label">Start a Project</span>
+        <span class="cta-arrow">→</span>
+        <span class="cta-email">hello@pixelcraft.dev</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-footer">
+    <span class="label">Web & Mobile</span>
+    <span class="label">Enterprise Software</span>
+    <span class="label">Custom Built</span>
+    <span class="label">Est. 2024</span>
+  </div>
+</section>
+
+<style>
+  .hero {
+    border-bottom: var(--border);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-inner {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: var(--border);
+  }
+
+  .hero-tag {
+    grid-column: 1 / -1;
+    padding: var(--space) var(--space-lg);
+    border-bottom: var(--border);
+    color: var(--color-accent);
+  }
+
+  .hero-title {
+    font-size: var(--font-size-hero);
+    padding: var(--space-lg);
+    border-right: var(--border);
+    align-self: end;
+  }
+
+  .hero-right {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 38ch;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border: var(--border);
+    padding: var(--space);
+    width: fit-content;
+  }
+
+  .hero-cta:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border-color: var(--color-accent);
+  }
+
+  .cta-arrow {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .cta-email {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: var(--space) var(--space-lg);
+    gap: var(--space);
+  }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-title { border-right: none; border-bottom: var(--border); font-size: clamp(3rem, 15vw, 6rem); }
+    .hero-footer { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

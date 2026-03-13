@@ -1,0 +1,114 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Discover',
+    body: 'We map your existing workflows, identify friction points, and define the functional requirements with the people who will actually use the system.',
+  },
+  {
+    num: '02',
+    title: 'Design & Build',
+    body: 'We design the application architecture and build iteratively, keeping your stakeholders in the loop at every milestone.',
+  },
+  {
+    num: '03',
+    title: 'Deploy & Support',
+    body: 'We deploy to your environment and provide ongoing support. The system is yours — fully documented, maintainable, and built to scale.',
+  },
+];
+---
+
+<section class="how" id="how-it-works">
+  <div class="how-header">
+    <span class="label">How It Works</span>
+    <h2 class="how-title">FROM REQUIREMENTS<br/>TO <span class="accent">RUNNING SOFTWARE</span></h2>
+  </div>
+
+  <div class="steps">
+    {steps.map((s) => (
+      <div class="step">
+        <div class="step-top">
+          <span class="step-num label accent">{s.num}</span>
+          <div class="step-line" />
+        </div>
+        <h3 class="step-title">{s.title.toUpperCase()}</h3>
+        <p class="step-body">{s.body}</p>
+      </div>
+    ))}
+  </div>
+
+  <div class="how-note">
+    <span class="label">No months of back-and-forth before a line of code is written.</span>
+  </div>
+</section>
+
+<style>
+  .how {
+    border-bottom: var(--border);
+  }
+
+  .how-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: end;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    border-bottom: var(--border);
+  }
+
+  .how-header .label { color: var(--color-accent); }
+
+  .how-title { font-size: var(--font-size-h2); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .step {
+    padding: var(--space-xl) var(--space-lg);
+    border-right: var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+  }
+
+  .step:last-child { border-right: none; }
+
+  .step-top {
+    display: flex;
+    align-items: center;
+    gap: var(--space);
+  }
+
+  .step-line {
+    flex: 1;
+    height: 4px;
+    background: var(--color-border);
+  }
+
+  .step-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .step-body {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    margin-top: auto;
+  }
+
+  .how-note {
+    padding: var(--space) var(--space-lg);
+    border-top: var(--border);
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  @media (max-width: 768px) {
+    .steps { grid-template-columns: 1fr; }
+    .step { border-right: none; border-bottom: var(--border); }
+    .step:last-child { border-bottom: none; }
+  }
+</style>
