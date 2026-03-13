@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixelcraft — Swiss International</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFFFFF;
+      --text: #1A1A1A;
+      --accent: #0055FF;
+      --secondary: #666666;
+      --border: #E0E0E0;
+      --unit: 8px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; transition: color 200ms ease; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: calc(var(--unit) * 2) calc(var(--unit) * 6);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: calc(var(--unit) * 8);
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-tagline {
+      font-size: 0.8125rem;
+      color: var(--secondary);
+      font-weight: 300;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: calc(var(--unit) * 4);
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--secondary);
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .nav-cta:hover { opacity: 0.7; }
+
+    /* HERO */
+    .hero {
+      padding: calc(var(--unit) * 20) calc(var(--unit) * 6) calc(var(--unit) * 12);
+      border-bottom: 1px solid var(--border);
+      max-width: 1200px;
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: calc(var(--unit) * 4);
+      display: block;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.75rem, 6vw, 5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      max-width: 18ch;
+    }
+
+    .hero-headline strong {
+      font-weight: 700;
+    }
+
+    .hero-bottom {
+      margin-top: calc(var(--unit) * 8);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: calc(var(--unit) * 8);
+      align-items: end;
+      padding-top: calc(var(--unit) * 8);
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--secondary);
+      max-width: 36ch;
+      grid-column: 1 / 3;
+    }
+
+    .hero-action {
+      text-align: right;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--bg);
+      background: var(--text);
+      padding: calc(var(--unit) * 1.5) calc(var(--unit) * 3);
+      transition: background 200ms ease;
+    }
+
+    .btn-primary:hover { background: var(--accent); }
+
+    /* STATS */
+    .stats {
+      padding: calc(var(--unit) * 8) calc(var(--unit) * 6);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: calc(var(--unit) * 4) 0;
+      padding-right: calc(var(--unit) * 6);
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child { border-right: none; padding-right: 0; }
+    .stat:not(:first-child) { padding-left: calc(var(--unit) * 6); }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 300;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.8125rem;
+      color: var(--secondary);
+      margin-top: calc(var(--unit));
+      display: block;
+    }
+
+    /* SERVICES */
+    .services {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      padding: calc(var(--unit) * 5) calc(var(--unit) * 6);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: calc(var(--unit) * 4);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .section-hr {
+      height: 1px;
+      background: var(--border);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-item {
+      padding: calc(var(--unit) * 7) calc(var(--unit) * 6);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background 200ms ease;
+    }
+
+    .service-item:nth-child(2n) { border-right: none; }
+    .service-item:nth-child(3),
+    .service-item:nth-child(4) { border-bottom: none; }
+
+    .service-item:hover { background: #F7F7F7; }
+
+    .service-index {
+      font-size: 0.6875rem;
+      color: var(--secondary);
+      font-weight: 400;
+      margin-bottom: calc(var(--unit) * 3);
+      display: block;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: calc(var(--unit) * 2);
+    }
+
+    .service-desc {
+      font-size: 0.875rem;
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
+    .service-stack {
+      margin-top: calc(var(--unit) * 4);
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ABOUT */
+    .about {
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+
+    .about-left {
+      padding: calc(var(--unit) * 12) calc(var(--unit) * 6);
+      border-right: 1px solid var(--border);
+    }
+
+    .about-left h2 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: calc(var(--unit) * 6);
+    }
+
+    .about-meta {
+      font-size: 0.8125rem;
+      color: var(--secondary);
+      line-height: 1.7;
+    }
+
+    .about-right {
+      padding: calc(var(--unit) * 12) calc(var(--unit) * 6);
+    }
+
+    .about-right p {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      font-weight: 300;
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      max-width: 52ch;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: calc(var(--unit) * 16) calc(var(--unit) * 6);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: calc(var(--unit) * 6);
+      display: block;
+    }
+
+    .contact-headline {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: calc(var(--unit) * 8);
+    }
+
+    .contact-headline strong { font-weight: 700; }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: calc(var(--unit) * 6);
+    }
+
+    .contact-email-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 2px;
+      transition: color 200ms ease, border-color 200ms ease;
+    }
+
+    .contact-email-link:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      padding: calc(var(--unit) * 4) calc(var(--unit) * 6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      font-size: 0.8125rem;
+      color: var(--secondary);
+    }
+
+    .footer-back {
+      font-size: 0.8125rem;
+      color: var(--secondary);
+      transition: color 200ms ease;
+    }
+
+    .footer-back:hover { color: var(--text); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav { grid-template-columns: 1fr auto; padding: calc(var(--unit) * 2) calc(var(--unit) * 3); }
+      .nav-tagline, .nav-links { display: none; }
+      .hero { padding: calc(var(--unit) * 12) calc(var(--unit) * 3) calc(var(--unit) * 8); }
+      .hero-bottom { grid-template-columns: 1fr; }
+      .hero-action { text-align: left; }
+      .stats { grid-template-columns: repeat(2, 1fr); padding: calc(var(--unit) * 4) calc(var(--unit) * 3); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--border); padding-bottom: calc(var(--unit) * 4); }
+      .stat:nth-child(3), .stat:nth-child(4) { padding-top: calc(var(--unit) * 4); }
+      .section-header { padding: calc(var(--unit) * 4) calc(var(--unit) * 3); }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-item { border-right: none !important; padding: calc(var(--unit) * 5) calc(var(--unit) * 3); }
+      .service-item:last-child { border-bottom: none; }
+      .service-item:nth-child(3) { border-bottom: 1px solid var(--border) !important; }
+      .about { grid-template-columns: 1fr; }
+      .about-left { border-right: none; border-bottom: 1px solid var(--border); padding: calc(var(--unit) * 6) calc(var(--unit) * 3); }
+      .about-right { padding: calc(var(--unit) * 8) calc(var(--unit) * 3); }
+      .contact { padding: calc(var(--unit) * 10) calc(var(--unit) * 3); }
+      .contact-row { flex-direction: column; align-items: flex-start; }
+      footer { padding: calc(var(--unit) * 3); flex-direction: column; align-items: flex-start; gap: calc(var(--unit) * 2); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Pixelcraft</div>
+    <p class="nav-tagline">We craft digital products that scale.</p>
+    <ul class="nav-links">
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="mailto:hello@pixelcraft.dev" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <span class="hero-label">Full-stack software consultancy</span>
+    <h1 class="hero-headline">We craft digital products that <strong>scale.</strong></h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">Full-stack software consultancy for ambitious teams. We partner with startups and enterprises to design, build, and scale what matters.</p>
+      <div class="hero-action">
+        <a href="mailto:hello@pixelcraft.dev" class="btn-primary">Start a Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <span class="stat-number">50+</span>
+      <span class="stat-label">Projects Delivered</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">8</span>
+      <span class="stat-label">Countries Served</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">4</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">30+</span>
+      <span class="stat-label">Happy Clients</span>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="section-header">
+      <span class="section-label">Services</span>
+      <div class="section-hr"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-item">
+        <span class="service-index">01 / 04</span>
+        <h3 class="service-title">Web Development</h3>
+        <p class="service-desc">React, Next.js, modern stacks. We build fast, scalable web applications with attention to detail.</p>
+        <p class="service-stack">React · Next.js · TypeScript</p>
+      </div>
+      <div class="service-item">
+        <span class="service-index">02 / 04</span>
+        <h3 class="service-title">Backend & APIs</h3>
+        <p class="service-desc">Node, Hono, scalable architecture. Robust backends that power your product at any scale.</p>
+        <p class="service-stack">Node.js · Hono · PostgreSQL</p>
+      </div>
+      <div class="service-item">
+        <span class="service-index">03 / 04</span>
+        <h3 class="service-title">Mobile Apps</h3>
+        <p class="service-desc">React Native, cross-platform. One codebase, native experience on both iOS and Android.</p>
+        <p class="service-stack">React Native · Expo</p>
+      </div>
+      <div class="service-item">
+        <span class="service-index">04 / 04</span>
+        <h3 class="service-title">Technical Consulting</h3>
+        <p class="service-desc">Architecture reviews, code audits. Expert perspective on your most critical technical decisions.</p>
+        <p class="service-stack">Architecture · Code Review</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-left">
+      <h2>About</h2>
+      <p class="about-meta">Founded by engineers.<br/>Built for scale.<br/>Focused on craft.</p>
+    </div>
+    <div class="about-right">
+      <p>Pixelcraft is a software consultancy built by engineers who care about craft. We partner with startups and enterprises to design, build, and scale digital products that make a real impact.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <span class="contact-label">Get in touch</span>
+    <h2 class="contact-headline">Ready to build<br/><strong>something great?</strong></h2>
+    <div class="contact-row">
+      <a href="mailto:hello@pixelcraft.dev" class="contact-email-link">hello@pixelcraft.dev</a>
+      <a href="mailto:hello@pixelcraft.dev" class="btn-primary">Start a Project</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 Pixelcraft. All rights reserved.</p>
+    <a href="index.html" class="footer-back">← View all styles</a>
+  </footer>
+
+</body>
+</html>

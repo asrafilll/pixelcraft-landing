@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixelcraft — Style Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0A0A0A;
+      --surface: #111111;
+      --border: #222222;
+      --text: #F0F0F0;
+      --muted: #666666;
+      --subtle: #333333;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    header {
+      padding: 3.5rem 3rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      max-width: 20ch;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .header-desc {
+      margin-top: 1.5rem;
+      font-size: 0.9375rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 52ch;
+      font-weight: 300;
+    }
+
+    .header-divider {
+      margin: 3.5rem 0 0;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    .card {
+      padding: 3rem 3rem 3rem 0;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card:nth-child(2n) {
+      border-right: none;
+      padding-left: 3rem;
+      padding-right: 0;
+    }
+
+    .card:nth-child(3),
+    .card:nth-child(4) {
+      border-bottom: none;
+    }
+
+    /* CARD PREVIEW */
+    .preview {
+      width: 100%;
+      height: 160px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Brutalist preview */
+    .preview-brutalist {
+      background: #fff;
+      border: 4px solid #000;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pb-nav {
+      background: #fff;
+      border-bottom: 4px solid #000;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #000;
+      flex-shrink: 0;
+    }
+
+    .pb-hero {
+      padding: 0.75rem;
+      flex: 1;
+    }
+
+    .pb-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.9;
+      color: #000;
+    }
+
+    .pb-title span { color: #FF0000; }
+
+    .pb-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 4px solid #000;
+      margin-top: 0.5rem;
+    }
+
+    .pb-cell {
+      border-right: 4px solid #000;
+      padding: 0.25rem 0.375rem;
+      font-size: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+    }
+
+    .pb-cell:last-child { border-right: none; }
+
+    /* Swiss preview */
+    .preview-swiss {
+      background: #fff;
+      border: 1px solid #E0E0E0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ps-nav {
+      border-bottom: 1px solid #E0E0E0;
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ps-logo {
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: #1A1A1A;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ps-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.5rem;
+      color: #666;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ps-hero {
+      padding: 1rem 0.75rem;
+      flex: 1;
+    }
+
+    .ps-title {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: #1A1A1A;
+      line-height: 1.1;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ps-title strong { font-weight: 700; }
+
+    .ps-label {
+      font-size: 0.5rem;
+      color: #0055FF;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.375rem;
+      display: block;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ps-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #E0E0E0;
+      margin-top: auto;
+    }
+
+    .ps-stat {
+      padding: 0.375rem 0.5rem;
+      border-right: 1px solid #E0E0E0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ps-stat:last-child { border-right: none; }
+    .ps-stat-n { font-size: 0.75rem; font-weight: 300; color: #1A1A1A; }
+    .ps-stat-l { font-size: 0.4rem; color: #666; }
+
+    /* Minimalist preview */
+    .preview-minimalist {
+      background: #fff;
+      border: 1px solid #E5E5E5;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pm-nav {
+      padding: 0.625rem 0.875rem;
+      border-bottom: 1px solid #E5E5E5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pm-logo { font-size: 0.625rem; color: #111; font-family: 'Inter', sans-serif; }
+    .pm-links { display: flex; gap: 0.625rem; }
+    .pm-link { font-size: 0.4375rem; color: #999; font-family: 'Inter', sans-serif; }
+
+    .pm-hero {
+      padding: 1.25rem 0.875rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .pm-eyebrow { font-size: 0.4375rem; color: #999; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+
+    .pm-title {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #111;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .pm-hr { height: 1px; background: #E5E5E5; margin: 0.75rem 0; }
+
+    .pm-desc { font-size: 0.4375rem; color: #999; font-family: 'Inter', sans-serif; line-height: 1.5; }
+
+    /* Industrial preview */
+    .preview-industrial {
+      background: #0D1117;
+      border: 1px solid #30363D;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Inter', monospace;
+    }
+
+    .pi-nav {
+      background: #161B22;
+      border-bottom: 1px solid #30363D;
+      padding: 0.375rem 0.625rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pi-bread { font-size: 0.5rem; color: #6E7681; }
+    .pi-bread .cur { color: #C9D1D9; }
+    .pi-status { font-size: 0.5rem; color: #3FB950; display: flex; align-items: center; gap: 0.25rem; }
+    .pi-dot { width: 4px; height: 4px; border-radius: 50%; background: #3FB950; }
+
+    .pi-hero {
+      padding: 0.75rem 0.625rem;
+      flex: 1;
+    }
+
+    .pi-prompt {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pi-sym { font-size: 1.25rem; color: #3FB950; line-height: 1; }
+    .pi-title { font-size: 1.25rem; font-weight: 700; color: #C9D1D9; line-height: 1; }
+
+    .pi-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #30363D;
+      border: 1px solid #30363D;
+      margin-top: 0.375rem;
+    }
+
+    .pi-m {
+      background: #161B22;
+      padding: 0.25rem 0.375rem;
+    }
+
+    .pi-k { font-size: 0.375rem; color: #6E7681; display: block; }
+    .pi-v { font-size: 0.4375rem; color: #C9D1D9; }
+    .pi-v.blue { color: #58A6FF; }
+
+    /* CARD CONTENT */
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .style-name {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .style-tag {
+      font-size: 0.6875rem;
+      color: var(--muted);
+      background: var(--subtle);
+      padding: 0.25rem 0.625rem;
+      border-radius: 2rem;
+    }
+
+    .style-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+
+    .style-traits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-bottom: 2rem;
+    }
+
+    .trait {
+      font-size: 0.6875rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.5rem;
+    }
+
+    .view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      padding: 0.625rem 1.25rem;
+      border: 1px solid var(--border);
+      transition: border-color 200ms, background 200ms;
+    }
+
+    .view-btn:hover {
+      border-color: var(--text);
+      background: var(--surface);
+    }
+
+    .view-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      margin-top: 0;
+    }
+
+    footer p { font-size: 0.8125rem; color: var(--muted); font-weight: 300; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      header, footer { padding: 2rem 1.5rem 0; }
+      footer { margin-top: 0; padding: 2rem 1.5rem; }
+      .grid { grid-template-columns: 1fr; padding: 0 1.5rem; }
+      .card, .card:nth-child(2n) { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 0; }
+      .card:last-child { border-bottom: none; }
+      .header-divider { margin: 2.5rem 0 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="brand">Pixelcraft</span>
+    <h1>One brand. <em>Four</em> design languages.</h1>
+    <p class="header-desc">Each page is the same Pixelcraft landing page — built from scratch in a completely different aesthetic. Pick a style and explore.</p>
+    <div class="header-divider"></div>
+  </header>
+
+  <div class="grid">
+
+    <!-- BRUTALIST -->
+    <div class="card">
+      <div class="preview preview-brutalist">
+        <div class="pb-nav">Pixelcraft</div>
+        <div class="pb-hero">
+          <div class="pb-title">We<br/><span>craft</span></div>
+        </div>
+        <div class="pb-grid">
+          <div class="pb-cell">50+<br/>Projects</div>
+          <div class="pb-cell">8<br/>Countries</div>
+          <div class="pb-cell">4yr<br/>Exp</div>
+          <div class="pb-cell">30+<br/>Clients</div>
+        </div>
+      </div>
+      <div class="card-header">
+        <span class="style-name">Brutalist</span>
+        <span class="style-tag">raw</span>
+      </div>
+      <p class="style-desc">Thick borders, massive type, zero decoration. Aggressive, confrontational, and unapologetically bold.</p>
+      <div class="style-traits">
+        <span class="trait">Archivo Black</span>
+        <span class="trait">Space Mono</span>
+        <span class="trait">4px borders</span>
+        <span class="trait">Red accent</span>
+        <span class="trait">No border-radius</span>
+      </div>
+      <a href="brutalist.html" class="view-btn">
+        View Brutalist
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- SWISS -->
+    <div class="card">
+      <div class="preview preview-swiss">
+        <div class="ps-nav">
+          <span class="ps-logo">Pixelcraft</span>
+          <div class="ps-links">
+            <span>Work</span><span>Services</span><span>About</span>
+          </div>
+        </div>
+        <div class="ps-hero">
+          <span class="ps-label">Full-stack consultancy</span>
+          <div class="ps-title">We craft digital<br/>products that <strong>scale.</strong></div>
+        </div>
+        <div class="ps-stats">
+          <div class="ps-stat"><div class="ps-stat-n">50+</div><div class="ps-stat-l">Projects</div></div>
+          <div class="ps-stat"><div class="ps-stat-n">8</div><div class="ps-stat-l">Countries</div></div>
+          <div class="ps-stat"><div class="ps-stat-n">4</div><div class="ps-stat-l">Years</div></div>
+          <div class="ps-stat"><div class="ps-stat-n">30+</div><div class="ps-stat-l">Clients</div></div>
+        </div>
+      </div>
+      <div class="card-header">
+        <span class="style-name">Swiss International</span>
+        <span class="style-tag">systematic</span>
+      </div>
+      <p class="style-desc">Strict grid, left-aligned everything, DM Sans in two weights. Clarity as a design principle.</p>
+      <div class="style-traits">
+        <span class="trait">DM Sans</span>
+        <span class="trait">8px grid</span>
+        <span class="trait">Left-aligned</span>
+        <span class="trait">#0055FF accent</span>
+        <span class="trait">200ms ease</span>
+      </div>
+      <a href="swiss.html" class="view-btn">
+        View Swiss
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- MINIMALIST -->
+    <div class="card">
+      <div class="preview preview-minimalist">
+        <div class="pm-nav">
+          <span class="pm-logo">Pixelcraft</span>
+          <div class="pm-links">
+            <span class="pm-link">Work</span>
+            <span class="pm-link">Services</span>
+            <span class="pm-link">About</span>
+            <span class="pm-link">Contact</span>
+          </div>
+        </div>
+        <div class="pm-hero">
+          <span class="pm-eyebrow">Software consultancy</span>
+          <div class="pm-title">We craft digital<br/>products that scale.</div>
+          <div class="pm-hr"></div>
+          <p class="pm-desc">Full-stack consultancy for ambitious teams. We design, build, and scale what matters.</p>
+        </div>
+      </div>
+      <div class="card-header">
+        <span class="style-name">Minimalist</span>
+        <span class="style-tag">restrained</span>
+      </div>
+      <p class="style-desc">Extreme whitespace, hairline borders, almost nothing on the page. Every element earns its place.</p>
+      <div class="style-traits">
+        <span class="trait">Instrument Sans</span>
+        <span class="trait">Weight 300</span>
+        <span class="trait">Massive padding</span>
+        <span class="trait">Hairline borders</span>
+        <span class="trait">Opacity hover</span>
+      </div>
+      <a href="minimalist.html" class="view-btn">
+        View Minimalist
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- INDUSTRIAL -->
+    <div class="card">
+      <div class="preview preview-industrial">
+        <div class="pi-nav">
+          <div class="pi-bread">pixelcraft <span style="color:#30363D">/</span> <span class="cur">home</span></div>
+          <div class="pi-status"><div class="pi-dot"></div><span>online</span></div>
+        </div>
+        <div class="pi-hero">
+          <div class="pi-prompt">
+            <span class="pi-sym">&gt;_</span>
+            <span class="pi-title">pixelcraft</span>
+          </div>
+          <div class="pi-meta">
+            <div class="pi-m"><span class="pi-k">description</span><span class="pi-v">software consultancy</span></div>
+            <div class="pi-m"><span class="pi-k">tagline</span><span class="pi-v blue">craft digital products</span></div>
+            <div class="pi-m"><span class="pi-k">type</span><span class="pi-v">full_stack</span></div>
+            <div class="pi-m"><span class="pi-k">status</span><span class="pi-v" style="color:#3FB950">accepting_projects</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <span class="style-name">Industrial</span>
+        <span class="style-tag">terminal</span>
+      </div>
+      <p class="style-desc">Dark, monospaced, dense. Looks like a GitHub README crossed with a terminal interface.</p>
+      <div class="style-traits">
+        <span class="trait">JetBrains Mono</span>
+        <span class="trait">Dark #0D1117</span>
+        <span class="trait">CLI aesthetic</span>
+        <span class="trait">Config blocks</span>
+        <span class="trait">Status dots</span>
+      </div>
+      <a href="industrial.html" class="view-btn">
+        View Industrial
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Pixelcraft Agency — 4 design explorations</p>
+    <p>hello@pixelcraft.dev</p>
+  </footer>
+
+</body>
+</html>
