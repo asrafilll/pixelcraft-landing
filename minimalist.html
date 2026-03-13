@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixelcraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFFFFF;
+      --text: #111111;
+      --muted: #999999;
+      --border: #E5E5E5;
+      --max: 56rem;
+      --section-pad: clamp(8rem, 20vh, 16rem);
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 300;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { opacity: 0.5; }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* NAV */
+    nav {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 0.9375rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 3rem;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: var(--section-pad);
+      padding-bottom: var(--section-pad);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-bottom: 3rem;
+      display: block;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-headline {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      max-width: 22ch;
+    }
+
+    .hero-foot {
+      margin-top: 6rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 42ch;
+    }
+
+    .btn-ghost {
+      font-size: 0.875rem;
+      font-weight: 400;
+      padding: 0.875rem 2rem;
+      border: 1px solid var(--border);
+      color: var(--text);
+      display: inline-block;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-ghost:hover { opacity: 0.5; }
+
+    /* STATS */
+    .stats {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+    }
+
+    .stat-number {
+      font-size: 2.25rem;
+      font-weight: 300;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      display: block;
+    }
+
+    /* SERVICES */
+    .services {
+      padding-top: var(--section-pad);
+      padding-bottom: var(--section-pad);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .services-title {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-bottom: 5rem;
+      display: block;
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .service-row:last-child { border-bottom: 1px solid var(--border); }
+
+    .service-name {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .service-detail {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ABOUT */
+    .about {
+      padding-top: var(--section-pad);
+      padding-bottom: var(--section-pad);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-label {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-bottom: 5rem;
+      display: block;
+    }
+
+    .about-text {
+      font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+      font-weight: 300;
+      line-height: 1.55;
+      letter-spacing: -0.02em;
+      max-width: 44ch;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding-top: var(--section-pad);
+      padding-bottom: var(--section-pad);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-label {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-bottom: 5rem;
+      display: block;
+    }
+
+    .contact-headline {
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 4rem;
+    }
+
+    .contact-email {
+      font-size: 1rem;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 3rem;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 2.5rem 0;
+    }
+
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p {
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    .footer-back {
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero-foot { flex-direction: column; align-items: flex-start; gap: 2rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .service-row { grid-template-columns: 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <div class="nav-logo">Pixelcraft</div>
+      <ul class="nav-links">
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="mailto:hello@pixelcraft.dev">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <span class="hero-eyebrow">Software consultancy</span>
+      <h1 class="hero-headline">We craft digital products that scale.</h1>
+      <div class="hero-foot">
+        <p class="hero-desc">Full-stack software consultancy for ambitious teams. We design, build, and scale products that make a real impact.</p>
+        <a href="mailto:hello@pixelcraft.dev" class="btn-ghost">Start a Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div>
+          <span class="stat-number">8</span>
+          <span class="stat-label">Countries Served</span>
+        </div>
+        <div>
+          <span class="stat-number">4</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div>
+          <span class="stat-number">30+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <span class="services-title">Services</span>
+      <div class="service-row">
+        <h3 class="service-name">Web Development</h3>
+        <p class="service-detail">React, Next.js, modern stacks. We build fast, scalable web applications that users love to use.</p>
+      </div>
+      <div class="service-row">
+        <h3 class="service-name">Backend & APIs</h3>
+        <p class="service-detail">Node, Hono, scalable architecture. Robust backends built for performance and longevity.</p>
+      </div>
+      <div class="service-row">
+        <h3 class="service-name">Mobile Apps</h3>
+        <p class="service-detail">React Native, cross-platform. One codebase, a native experience on iOS and Android.</p>
+      </div>
+      <div class="service-row">
+        <h3 class="service-name">Technical Consulting</h3>
+        <p class="service-detail">Architecture reviews, code audits. Expert perspective on your most critical technical decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <span class="about-label">About</span>
+      <p class="about-text">Pixelcraft is a software consultancy built by engineers who care about craft. We partner with startups and enterprises to design, build, and scale digital products that make a real impact.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <span class="contact-label">Contact</span>
+      <h2 class="contact-headline">Ready to build something?</h2>
+      <a href="mailto:hello@pixelcraft.dev" class="contact-email">hello@pixelcraft.dev</a>
+      <a href="mailto:hello@pixelcraft.dev" class="btn-ghost">Start a Project</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2024 Pixelcraft</p>
+      <a href="index.html" class="footer-back">All styles</a>
+    </div>
+  </footer>
+
+</body>
+</html>
