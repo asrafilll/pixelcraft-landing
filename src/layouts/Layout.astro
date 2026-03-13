@@ -1,46 +1,41 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
   title?: string;
   description?: string;
 }
-
 const {
-  title = 'Pixelcraft — Custom Software for Enterprises',
-  description = 'Pixelcraft designs and develops custom web and mobile applications for enterprises. Internal tools built for the way your business actually works.',
+  title = 'Pixelcraft | Custom Enterprise Software',
+  description = 'Pixelcraft designs and develops custom web and mobile applications for enterprises — internal tools that fit your operations, not the other way around.',
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
-
-    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pixelcraft.dev" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-
     <link rel="canonical" href="https://pixelcraft.dev" />
     <title>{title}</title>
-
-    <!-- Preconnect fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </head>
-  <body>
+  <body class="font-sans antialiased selection:bg-zinc-800 selection:text-white relative bg-white text-zinc-600 overflow-x-hidden">
+
+    <!-- Fixed background grid -->
+    <div class="fixed inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(228,228,231,0.4) 1px, transparent 1px), linear-gradient(to bottom, rgba(228,228,231,0.4) 1px, transparent 1px); background-size: 3rem 3rem; mask-image: linear-gradient(to bottom, white 0%, transparent 80%); -webkit-mask-image: linear-gradient(to bottom, white 0%, transparent 80%);"></div>
+
+    <!-- Ambient glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[40rem] blur-[100px] rounded-full pointer-events-none z-0 bg-gradient-to-b from-zinc-200/40 to-transparent animate-pulse-slow"></div>
+
     <slot />
   </body>
 </html>
-
-<style is:global>
-  @import '../styles/global.css';
-</style>

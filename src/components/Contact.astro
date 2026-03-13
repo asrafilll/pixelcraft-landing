@@ -1,117 +1,31 @@
 ---
 ---
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <div class="contact-left">
-      <span class="label">Start a Project</span>
-      <h2 class="contact-title">
-        LET'S TALK<br/>
-        ABOUT WHAT<br/>
-        YOU'RE<br/>
-        <span class="accent">WORKING AROUND</span>
-      </h2>
-    </div>
-    <div class="contact-right">
-      <p class="contact-body">
-        If there's a process in your organization that relies on a workaround
-        — a spreadsheet, a manual step, a tool that only partially fits —
-        that is the right place to start.
-      </p>
-      <p class="contact-body">
-        Send us a description of the problem. We'll respond with an honest
-        assessment of what a custom solution would involve.
-      </p>
-      <a href="mailto:hello@pixelcraft.dev" class="contact-cta">
-        <span class="cta-label label">Send us a message</span>
-        <span class="cta-main">hello@pixelcraft.dev</span>
-        <span class="cta-hint label">Response within 24 hours</span>
+<section class="py-40 px-6 border-t relative overflow-hidden border-zinc-200/50 bg-zinc-50/50" id="contact">
+  <!-- Ambient glow -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[30rem] blur-[120px] rounded-full pointer-events-none z-0 bg-gradient-to-t from-zinc-200/60 to-transparent animate-pulse" style="animation-duration: 5s;"></div>
+  <!-- Dot grid -->
+  <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at center, #a1a1aa 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+  <div class="max-w-3xl mx-auto text-center flex flex-col items-center relative z-10 group">
+    <h2 class="text-4xl md:text-5xl font-medium tracking-tight mb-6 leading-tight text-zinc-950 transition-transform duration-700 group-hover:scale-[1.02]">
+      Let's Talk About What You're Working Around
+    </h2>
+    <p class="text-base mb-12 max-w-2xl leading-relaxed text-zinc-500 transition-colors duration-500 group-hover:text-zinc-600">
+      If there's a process in your organization that relies on a workaround — a spreadsheet, a manual step, a tool that only partially fits — that is the right place to start. Send us a description of the problem. We'll respond with an honest assessment of what a custom solution would involve.
+    </p>
+
+    <div class="relative">
+      <div class="absolute inset-0 bg-zinc-900 rounded-full blur-md opacity-20 group-hover:opacity-40 transition-opacity duration-500 group-hover:animate-pulse"></div>
+      <a href="mailto:hello@pixelcraft.dev" class="relative inline-flex items-center gap-3 px-8 py-4 rounded-full text-sm font-medium transition-all duration-300 bg-zinc-950 text-white hover:bg-zinc-800 hover:scale-[1.05] active:scale-[0.98] shadow-xl">
+        <iconify-icon icon="solar:letter-linear" class="text-lg" style="stroke-width: 1.5;"></iconify-icon>
+        hello@pixelcraft.dev
       </a>
     </div>
   </div>
-
-  <footer class="site-footer">
-    <span class="label">© 2024 Pixelcraft</span>
-    <span class="label">Custom Enterprise Software</span>
-    <span class="label">pixelcraft.dev</span>
-  </footer>
 </section>
 
-<style>
-  .contact {
-    background: var(--color-text);
-    color: var(--color-bg);
-  }
-
-  .contact-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 70vh;
-  }
-
-  .contact-left {
-    padding: var(--space-xl) var(--space-lg);
-    border-right: var(--border-inv);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-    justify-content: flex-end;
-  }
-
-  .contact-left .label { color: var(--color-accent); }
-
-  .contact-title {
-    font-size: var(--font-size-h2);
-    color: var(--color-text-inv);
-  }
-
-  .contact-right {
-    padding: var(--space-xl) var(--space-lg);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: var(--space-lg);
-  }
-
-  .contact-body {
-    max-width: 42ch;
-    line-height: 1.7;
-    font-size: 0.9rem;
-  }
-
-  .contact-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    border: var(--border-inv);
-    padding: var(--space);
-    width: fit-content;
-    color: var(--color-text-inv);
-    margin-top: var(--space);
-  }
-
-  .contact-cta:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-  }
-
-  .cta-main {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    text-transform: uppercase;
-  }
-
-  .site-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space) var(--space-lg);
-    border-top: var(--border-inv);
-  }
-
-  @media (max-width: 768px) {
-    .contact-inner { grid-template-columns: 1fr; }
-    .contact-left { border-right: none; border-bottom: var(--border-inv); padding: var(--space-lg); }
-    .contact-right { padding: var(--space-lg); }
-    .site-footer { flex-direction: column; align-items: flex-start; gap: var(--space); }
-  }
-</style>
+<footer class="py-8 px-6 border-t text-center border-zinc-200/50 relative z-10 bg-white">
+  <p class="text-xs text-zinc-400 font-medium tracking-wide uppercase flex items-center justify-center gap-2">
+    © 2024 Pixelcraft <span class="w-1 h-1 rounded-full bg-zinc-300"></span> All rights reserved.
+  </p>
+</footer>

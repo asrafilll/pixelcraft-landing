@@ -1,112 +1,21 @@
 ---
-const industries = [
-  'Manufacturing',
-  'Logistics & Supply Chain',
-  'Financial Services',
-  'Healthcare Administration',
-  'Professional Services',
-  'HR & People Operations',
-  'Field Operations',
-  'Finance & Compliance',
-];
 ---
-
-<section class="who" id="who-we-build-for">
-  <div class="who-left">
-    <span class="label">Who We Build For</span>
-    <h2 class="who-title">
-      BUILT FOR<br/>
-      OPERATIONS,<br/>
-      FINANCE, HR,<br/>
-      <span class="accent">AND FIELD TEAMS</span>
-    </h2>
-    <p class="who-body">
-      We work with enterprises across industries where internal operations
-      are complex. If your teams rely on a process that currently lives in
-      a spreadsheet, an email chain, or a tool that almost fits — that's
-      where we start.
-    </p>
-  </div>
-
-  <div class="who-right">
-    <div class="industries-label label">Industries</div>
-    <ul class="industries-list">
-      {industries.map((ind) => (
-        <li class="industry-item">
-          <span class="industry-arrow accent">→</span>
-          <span>{ind}</span>
-        </li>
-      ))}
-    </ul>
+<section class="py-24 px-6 relative z-10" id="who-we-build-for">
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent"></div>
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 group">
+    <div class="md:col-span-5 relative">
+      <h2 class="text-3xl md:text-4xl font-medium tracking-tight leading-tight text-zinc-950 transition-transform duration-700 group-hover:translate-x-2">
+        Built for Operations, Finance, HR, and Field Teams
+      </h2>
+    </div>
+    <div class="md:col-span-7 space-y-6 text-base leading-relaxed mt-1 md:mt-0 text-zinc-500 relative">
+      <div class="absolute -left-6 top-0 w-1 h-full bg-gradient-to-b from-zinc-200 to-transparent rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
+      <p class="transition-all duration-500 group-hover:text-zinc-700">
+        We work with enterprises across industries where internal operations are complex — manufacturing, logistics, financial services, healthcare administration, and professional services.
+      </p>
+      <p class="transition-all duration-500 delay-100 group-hover:text-zinc-700">
+        If your teams rely on a process that currently lives in a spreadsheet, an email chain, or a tool that almost fits — that's where we start.
+      </p>
+    </div>
   </div>
 </section>
-
-<style>
-  .who {
-    border-bottom: var(--border);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .who-left {
-    padding: var(--space-xl) var(--space-lg);
-    border-right: var(--border);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-  }
-
-  .who-left .label { color: var(--color-accent); }
-
-  .who-title {
-    font-size: var(--font-size-h2);
-  }
-
-  .who-body {
-    max-width: 42ch;
-    line-height: 1.7;
-  }
-
-  .who-right {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .industries-label {
-    padding: var(--space);
-    border-bottom: var(--border);
-  }
-
-  .industries-list {
-    list-style: none;
-    flex: 1;
-  }
-
-  .industry-item {
-    display: flex;
-    gap: var(--space);
-    align-items: center;
-    padding: var(--space) var(--space-lg);
-    border-bottom: var(--border);
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .industry-item:hover {
-    background: var(--color-text);
-    color: var(--color-bg);
-  }
-
-  .industry-item:hover .industry-arrow {
-    color: var(--color-bg);
-  }
-
-  .industry-arrow { font-size: 1.2rem; }
-
-  @media (max-width: 768px) {
-    .who { grid-template-columns: 1fr; }
-    .who-left { border-right: none; border-bottom: var(--border); padding: var(--space-lg); }
-  }
-</style>

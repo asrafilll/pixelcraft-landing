@@ -1,0 +1,259 @@
+PIXELCRAFT — HOMEPAGE CONTENT
+==============================
+
+
+NAVIGATION
+----------
+Logo: PIXELCRAFT
+Links: Work | Clients | Get in Touch
+CTA: hello@pixelcraft.dev
+
+
+==============================
+SECTION 1: HERO
+==============================
+
+Tag: Custom Enterprise Software
+
+Headline:
+SOFTWARE BUILT FOR THE WAY YOUR BUSINESS ACTUALLY WORKS
+
+Subheadline:
+Pixelcraft designs and develops custom web and mobile applications for
+enterprises — internal tools that fit your operations, not the other way around.
+
+CTA Button: Start a Project → hello@pixelcraft.dev
+
+Footer tags: Web & Mobile | Enterprise Software | Custom Built | Est. 2024
+
+
+==============================
+SECTION 2: THE PROBLEM
+==============================
+
+Label: The Problem
+
+Heading:
+OFF-THE-SHELF SOFTWARE WASN'T BUILT FOR YOUR BUSINESS
+
+Body:
+Most enterprise software is designed for the average company. If your
+workflows, approval chains, or reporting needs don't match that average
+— and they rarely do — you spend more time working around the tool
+than with it.
+
+The result: duplicate spreadsheets, manual workarounds, fragmented
+data, and a team that has quietly given up on the system.
+
+Stat: 73% of enterprise software implementations fail to meet operational goals
+
+
+==============================
+SECTION 3: WHAT WE DO
+==============================
+
+Label: What We Do
+
+Heading:
+PURPOSE-BUILT INTERNAL APPLICATIONS
+
+Intro:
+Pixelcraft builds web and mobile applications designed specifically for
+how your teams operate. Every project is built from the ground up.
+No templates. No unnecessary features. No license fees for tools your
+people won't use.
+
+Services:
+01 — Internal Dashboards
+Real-time operational visibility. Custom-built to surface the metrics
+that matter to your specific workflows.
+
+02 — Workflow Automation
+Approval chains, task routing, notifications — engineered to match
+your process exactly as it exists.
+
+03 — Mobile Field Tools
+Native and progressive web apps for teams in the field.
+Works offline. Syncs when connected.
+
+04 — Data & Reporting Systems
+Replace fragmented spreadsheets with a single source of truth.
+Structured, searchable, exportable.
+
+
+==============================
+SECTION 4: WHO WE BUILD FOR
+==============================
+
+Label: Who We Build For
+
+Heading:
+BUILT FOR OPERATIONS, FINANCE, HR, AND FIELD TEAMS
+
+Body:
+We work with enterprises across industries where internal operations
+are complex. If your teams rely on a process that currently lives in
+a spreadsheet, an email chain, or a tool that almost fits — that's
+where we start.
+
+Industries:
+→ Manufacturing
+→ Logistics & Supply Chain
+→ Financial Services
+→ Healthcare Administration
+→ Professional Services
+→ HR & People Operations
+→ Field Operations
+→ Finance & Compliance
+
+
+==============================
+SECTION 5: HOW IT WORKS
+==============================
+
+Label: How It Works
+
+Heading:
+FROM REQUIREMENTS TO RUNNING SOFTWARE
+
+Note: No months of back-and-forth before a line of code is written.
+
+Steps:
+
+01 — Discover
+We map your existing workflows, identify friction points, and define
+the functional requirements with the people who will actually use
+the system.
+
+02 — Design & Build
+We design the application architecture and build iteratively, keeping
+your stakeholders in the loop at every milestone.
+
+03 — Deploy & Support
+We deploy to your environment and provide ongoing support. The system
+is yours — fully documented, maintainable, and built to scale.
+
+
+==============================
+SECTION 6: WHY CUSTOM OVER OFF-THE-SHELF
+==============================
+
+Label: Why Custom
+
+Heading:
+THE REAL COST OF THE WRONG TOOL
+
+Intro (italic):
+Licensing fees are visible. The hidden costs of a poor-fit tool are not.
+
+Body:
+Custom software eliminates the gap between how your business works
+and how your software works. The upfront investment is offset by the
+removal of workarounds, the reduction in manual effort, and the
+increase in data reliability across the organization.
+
+Hidden Cost Breakdown:
+- Manual data extraction → Time lost daily, compounding across teams
+- Approval email chains → Delays that cascade into missed deadlines
+- Failed adoption → Original investment lost; teams revert to spreadsheets
+- Fragmented reporting → Manual reconciliation before every decision
+
+Callout:
+When adoption fails, the original investment is lost entirely.
+
+
+==============================
+SECTION 7: WHAT WE'VE BUILT
+==============================
+
+Label: What We've Built
+
+Heading:
+APPLICATIONS THAT SOLVE REAL OPERATIONAL PROBLEMS
+
+Projects:
+
+[Field Operations]
+Field Inspection Tool
+A mobile application that replaced paper-based inspection forms for
+an operations team. Reports generate automatically; sign-offs are
+captured in real time.
+Stack: Mobile | Offline-first | Auto-reporting
+
+[Finance & Procurement]
+Internal Procurement Dashboard
+A web portal consolidating procurement requests, vendor approvals,
+and budget tracking across multiple departments — replacing a
+multi-spreadsheet process that required manual reconciliation.
+Stack: Web App | Multi-dept | Budget Tracking
+
+[HR & People Ops]
+HR Onboarding Platform
+A structured onboarding workflow tool that guides new hires through
+compliance, access provisioning, and team introductions — reducing
+HR coordination time significantly.
+Stack: Workflow | Compliance | Access Management
+
+[Executive Reporting]
+Executive Reporting Suite
+A real-time dashboard aggregating operational KPIs from multiple
+data sources, formatted for C-suite review without manual preparation
+each week.
+Stack: Dashboard | Real-time | Multi-source
+
+
+==============================
+SECTION 8: THE COST OF INACTION
+==============================
+
+Label: The Cost of Inaction
+
+Heading:
+THE LONGER YOU WAIT, THE MORE IT COSTS
+
+Body:
+Inefficient internal tooling is not a static problem. As your
+organization grows, the friction scales with it. What takes one team
+an extra hour today takes ten teams an extra hour tomorrow.
+
+The organizations that build the right internal infrastructure early
+gain a compounding operational advantage. Those that defer the
+investment find themselves managing increasingly complex workarounds
+while competitors move faster with less friction.
+
+The question is not whether your operations need better tooling.
+It is how long inefficiency will be tolerated before it becomes
+a strategic liability.
+
+
+==============================
+SECTION 9: FOOTER CTA / CONTACT
+==============================
+
+Label: Start a Project
+
+Heading:
+LET'S TALK ABOUT WHAT YOU'RE WORKING AROUND
+
+Body:
+If there's a process in your organization that relies on a workaround
+— a spreadsheet, a manual step, a tool that only partially fits —
+that is the right place to start.
+
+Send us a description of the problem. We'll respond with an honest
+assessment of what a custom solution would involve.
+
+CTA: hello@pixelcraft.dev
+Note: Response within 24 hours
+
+
+==============================
+FOOTER
+==============================
+
+© 2024 Pixelcraft | Custom Enterprise Software | pixelcraft.dev
+
+
+==============================
+END OF DOCUMENT
+==============================

@@ -1,114 +1,58 @@
 ---
-const steps = [
-  {
-    num: '01',
-    title: 'Discover',
-    body: 'We map your existing workflows, identify friction points, and define the functional requirements with the people who will actually use the system.',
-  },
-  {
-    num: '02',
-    title: 'Design & Build',
-    body: 'We design the application architecture and build iteratively, keeping your stakeholders in the loop at every milestone.',
-  },
-  {
-    num: '03',
-    title: 'Deploy & Support',
-    body: 'We deploy to your environment and provide ongoing support. The system is yours — fully documented, maintainable, and built to scale.',
-  },
-];
 ---
+<section class="py-32 px-6 relative z-10 bg-zinc-50/50 backdrop-blur-sm border-t border-zinc-100" id="how-it-works">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-20 group">
+      <h2 class="text-3xl md:text-4xl font-medium tracking-tight mb-6 text-zinc-950 transition-transform duration-500 group-hover:scale-105">
+        From Requirements to Running Software
+      </h2>
+      <p class="text-base leading-relaxed text-zinc-500 transition-colors duration-500 group-hover:text-zinc-600">
+        We run a structured, low-friction engagement — no months of back-and-forth before a line of code is written.
+      </p>
+    </div>
 
-<section class="how" id="how-it-works">
-  <div class="how-header">
-    <span class="label">How It Works</span>
-    <h2 class="how-title">FROM REQUIREMENTS<br/>TO <span class="accent">RUNNING SOFTWARE</span></h2>
-  </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+      <!-- Desktop connecting line -->
+      <div class="hidden md:block absolute top-12 left-16 right-16 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent z-0"></div>
 
-  <div class="steps">
-    {steps.map((s) => (
-      <div class="step">
-        <div class="step-top">
-          <span class="step-num label accent">{s.num}</span>
-          <div class="step-line" />
+      <!-- Step 1 -->
+      <div class="group relative p-8 rounded-2xl border bg-white border-zinc-200/60 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 z-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-zinc-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-8 bg-zinc-100 text-zinc-950 group-hover:bg-zinc-950 group-hover:text-white transition-all duration-500 transform group-hover:scale-110 shadow-sm">
+          <iconify-icon icon="solar:map-point-search-linear" class="text-2xl" style="stroke-width: 1.5;"></iconify-icon>
         </div>
-        <h3 class="step-title">{s.title.toUpperCase()}</h3>
-        <p class="step-body">{s.body}</p>
+        <div class="text-xs font-medium tracking-widest text-zinc-400 uppercase mb-3 transition-colors duration-300 group-hover:text-zinc-900">Step 1</div>
+        <h3 class="text-xl font-medium tracking-tight mb-3 text-zinc-950">Discover</h3>
+        <p class="text-sm leading-relaxed text-zinc-500 group-hover:text-zinc-600 transition-colors duration-300">
+          We map your existing workflows, identify friction points, and define the functional requirements with the people who will actually use the system.
+        </p>
       </div>
-    ))}
-  </div>
 
-  <div class="how-note">
-    <span class="label">No months of back-and-forth before a line of code is written.</span>
+      <!-- Step 2 -->
+      <div class="group relative p-8 rounded-2xl border bg-white border-zinc-200/60 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 z-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-zinc-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-8 bg-zinc-100 text-zinc-950 group-hover:bg-zinc-950 group-hover:text-white transition-all duration-500 transform group-hover:scale-110 shadow-sm">
+          <iconify-icon icon="solar:pen-new-square-linear" class="text-2xl" style="stroke-width: 1.5;"></iconify-icon>
+        </div>
+        <div class="text-xs font-medium tracking-widest text-zinc-400 uppercase mb-3 transition-colors duration-300 group-hover:text-zinc-900">Step 2</div>
+        <h3 class="text-xl font-medium tracking-tight mb-3 text-zinc-950">Design & Build</h3>
+        <p class="text-sm leading-relaxed text-zinc-500 group-hover:text-zinc-600 transition-colors duration-300">
+          We design the application architecture and build iteratively, keeping your stakeholders in the loop at every milestone.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="group relative p-8 rounded-2xl border bg-white border-zinc-200/60 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 z-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-zinc-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-8 bg-zinc-100 text-zinc-950 group-hover:bg-zinc-950 group-hover:text-white transition-all duration-500 transform group-hover:scale-110 shadow-sm">
+          <iconify-icon icon="solar:rocket-linear" class="text-2xl" style="stroke-width: 1.5;"></iconify-icon>
+        </div>
+        <div class="text-xs font-medium tracking-widest text-zinc-400 uppercase mb-3 transition-colors duration-300 group-hover:text-zinc-900">Step 3</div>
+        <h3 class="text-xl font-medium tracking-tight mb-3 text-zinc-950">Deploy & Support</h3>
+        <p class="text-sm leading-relaxed text-zinc-500 group-hover:text-zinc-600 transition-colors duration-300">
+          We deploy to your environment and provide ongoing support. The system is yours — fully documented, maintainable, and built to scale.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
-
-<style>
-  .how {
-    border-bottom: var(--border);
-  }
-
-  .how-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: end;
-    gap: var(--space-lg);
-    padding: var(--space-lg);
-    border-bottom: var(--border);
-  }
-
-  .how-header .label { color: var(--color-accent); }
-
-  .how-title { font-size: var(--font-size-h2); }
-
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .step {
-    padding: var(--space-xl) var(--space-lg);
-    border-right: var(--border);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space);
-  }
-
-  .step:last-child { border-right: none; }
-
-  .step-top {
-    display: flex;
-    align-items: center;
-    gap: var(--space);
-  }
-
-  .step-line {
-    flex: 1;
-    height: 4px;
-    background: var(--color-border);
-  }
-
-  .step-title {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    line-height: 1;
-  }
-
-  .step-body {
-    font-size: 0.85rem;
-    line-height: 1.7;
-    margin-top: auto;
-  }
-
-  .how-note {
-    padding: var(--space) var(--space-lg);
-    border-top: var(--border);
-    background: var(--color-accent);
-    color: var(--color-bg);
-  }
-
-  @media (max-width: 768px) {
-    .steps { grid-template-columns: 1fr; }
-    .step { border-right: none; border-bottom: var(--border); }
-    .step:last-child { border-bottom: none; }
-  }
-</style>
