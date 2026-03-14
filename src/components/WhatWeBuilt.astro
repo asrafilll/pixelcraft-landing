@@ -2,23 +2,31 @@
 const projects = [
   {
     icon: 'solar:smartphone-update-linear',
-    title: 'Field Inspection Tool',
-    desc: 'A mobile application that replaced paper-based inspection forms for an operations team. Reports generate automatically; sign-offs are captured in real time.',
+    title: 'Sistem Inspeksi Lapangan',
+    tag: 'Logistik · Surabaya',
+    desc: 'Mobile app yang menggantikan form inspeksi kertas untuk tim operasional. Stok error turun dari 12% → 1,2% dalam 3 bulan. Tim hemat 50 jam kerja per bulan.',
+    metrics: [{ label: 'Error turun', value: '10.8%' }, { label: 'Hemat/bulan', value: '50 jam' }],
   },
   {
     icon: 'solar:cart-large-minimalistic-linear',
-    title: 'Procurement Dashboard',
-    desc: 'A web portal consolidating procurement requests, vendor approvals, and budget tracking across multiple departments — replacing a multi-spreadsheet process.',
+    title: 'Portal Pengadaan Barang',
+    tag: 'Manufaktur · Bekasi · 200 karyawan',
+    desc: 'Portal web yang menyatukan permintaan pengadaan, approval vendor, dan tracking budget lintas departemen — menggantikan proses multi-spreadsheet.',
+    metrics: [{ label: 'Approval PO', value: '3 hari → 4 jam' }, { label: 'PO hilang', value: '0' }],
   },
   {
     icon: 'solar:users-group-two-rounded-linear',
-    title: 'HR Onboarding Platform',
-    desc: 'A structured onboarding workflow tool that guides new hires through compliance, access provisioning, and team introductions — reducing coordination time.',
+    title: 'Platform Onboarding HR',
+    tag: 'Retail · Jakarta',
+    desc: 'Sistem onboarding terstruktur untuk karyawan baru — compliance, akses sistem, dan pengenalan tim dalam satu alur digital.',
+    metrics: [{ label: 'Waktu koordinasi HR', value: '↓ 60%' }, { label: 'Tanpa kertas', value: '100%' }],
   },
   {
     icon: 'solar:chart-square-linear',
-    title: 'Executive Reporting Suite',
-    desc: 'A real-time dashboard aggregating operational KPIs from multiple data sources, formatted for C-suite review without manual preparation each week.',
+    title: 'Dashboard Eksekutif',
+    tag: 'Jasa Profesional · Bandung',
+    desc: 'Dashboard real-time yang mengagregasi KPI operasional dari berbagai sumber data — siap review manajemen tanpa persiapan manual tiap minggu.',
+    metrics: [{ label: 'Waktu compile laporan', value: '↓ 100%' }, { label: 'Sumber data', value: '6 sistem' }],
   },
 ];
 ---
@@ -29,8 +37,9 @@ const projects = [
   <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[30rem] h-[30rem] border border-zinc-200/30 rounded-full opacity-50 pointer-events-none"></div>
 
   <div class="max-w-6xl mx-auto relative z-10">
+    <p class="text-xs font-medium tracking-widest text-zinc-400 uppercase mb-4">Case study</p>
     <h2 class="text-3xl md:text-4xl font-medium tracking-tight mb-16 max-w-2xl text-zinc-950">
-      Applications That Solve Real Operational Problems
+      Aplikasi yang Menyelesaikan Masalah Operasional Nyata
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -38,18 +47,30 @@ const projects = [
         <div class="group relative p-8 rounded-2xl border bg-white border-zinc-200/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-default">
           <div class="absolute inset-0 bg-gradient-to-br from-zinc-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           <div class="relative z-10">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-              <div class="flex items-center gap-4 text-zinc-950">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div class="flex items-center gap-3 text-zinc-950">
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-zinc-100 group-hover:bg-zinc-950 group-hover:text-white transition-colors duration-500">
                   <iconify-icon icon={p.icon} class="text-xl" style="stroke-width: 1.5;"></iconify-icon>
                 </div>
-                <h3 class="text-xl font-medium tracking-tight">{p.title}</h3>
+                <div>
+                  <h3 class="text-base font-medium tracking-tight leading-tight">{p.title}</h3>
+                  <p class="text-xs text-zinc-400 mt-0.5">{p.tag}</p>
+                </div>
               </div>
-              <iconify-icon icon="solar:arrow-right-up-linear" class="text-xl text-zinc-300 opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500"></iconify-icon>
+              <iconify-icon icon="solar:arrow-right-up-linear" class="text-xl text-zinc-300 opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500 shrink-0"></iconify-icon>
             </div>
-            <p class="text-sm leading-relaxed text-zinc-500 group-hover:text-zinc-600 transition-colors duration-300">
+            <p class="text-sm leading-relaxed text-zinc-500 group-hover:text-zinc-600 transition-colors duration-300 mb-5">
               {p.desc}
             </p>
+            <!-- Metrics -->
+            <div class="flex gap-4 pt-4 border-t border-zinc-100">
+              {p.metrics.map((m) => (
+                <div>
+                  <p class="text-base font-medium text-zinc-950">{m.value}</p>
+                  <p class="text-xs text-zinc-400">{m.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ))}

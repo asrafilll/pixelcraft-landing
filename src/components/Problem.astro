@@ -1,20 +1,36 @@
 ---
+const pains = [
+  { icon: 'solar:document-text-linear', text: 'Laporan stok dikerjakan manual di Excel setiap minggu' },
+  { icon: 'solar:chat-round-dots-linear', text: 'Approval permintaan barang lewat WhatsApp — sering terlewat' },
+  { icon: 'solar:folder-error-linear', text: 'Data karyawan tersebar di banyak file, susah ditelusuri' },
+  { icon: 'solar:bill-cross-linear', text: 'Software ERP yang dibeli mahal tapi tidak sesuai proses Anda' },
+  { icon: 'solar:printer-minimalistic-linear', text: 'Onboarding karyawan baru masih print form, tanda tangan fisik' },
+];
 ---
 <section class="py-24 px-6 relative z-10">
   <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent"></div>
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 group">
     <div class="md:col-span-5">
+      <p class="text-xs font-medium tracking-widest text-zinc-400 uppercase mb-4">Masalah yang kami selesaikan</p>
       <h2 class="text-3xl md:text-4xl font-medium tracking-tight leading-tight text-zinc-950 transition-transform duration-700 group-hover:translate-x-2">
-        Off-the-Shelf Software Wasn't Built for Your Business
+        Software yang Ada Tidak Dibuat untuk Bisnis Anda
       </h2>
     </div>
-    <div class="md:col-span-7 space-y-6 text-base leading-relaxed mt-1 md:mt-0 text-zinc-500 relative">
+    <div class="md:col-span-7 mt-1 md:mt-0 relative">
       <div class="absolute -left-6 top-0 w-1 h-full bg-gradient-to-b from-zinc-200 to-transparent rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
-      <p class="transition-all duration-500 group-hover:text-zinc-700">
-        Most enterprise software is designed for the average company. If your workflows, approval chains, or reporting needs don't match that average — and they rarely do — you spend more time working around the tool than with it.
+      <p class="text-base leading-relaxed text-zinc-500 mb-8 transition-all duration-500 group-hover:text-zinc-700">
+        Kebanyakan software dirancang untuk perusahaan rata-rata. Kalau proses, rantai approval, atau kebutuhan laporan Anda tidak sesuai rata-rata itu — dan biasanya memang tidak — Anda akan lebih banyak kerja <em>di sekitar</em> sistemnya daripada <em>dengan</em> sistemnya.
       </p>
-      <p class="transition-all duration-500 delay-100 group-hover:text-zinc-700">
-        The result: duplicate spreadsheets, manual workarounds, fragmented data, and a team that has quietly given up on the system.
+      <ul class="space-y-3 mb-8">
+        {pains.map((p) => (
+          <li class="flex items-start gap-3 text-sm text-zinc-500 transition-all duration-300 group-hover:text-zinc-600">
+            <iconify-icon icon={p.icon} class="text-xl text-zinc-300 mt-0.5 shrink-0" style="stroke-width: 1.5;"></iconify-icon>
+            <span>{p.text}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="text-sm font-medium text-zinc-400 italic transition-all duration-500 delay-100 group-hover:text-zinc-600">
+        Ini bukan salah tim Anda. Sistemnya yang belum sesuai.
       </p>
     </div>
   </div>

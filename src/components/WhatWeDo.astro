@@ -1,20 +1,65 @@
 ---
+const services = [
+  {
+    icon: 'solar:box-minimalistic-linear',
+    title: 'Sistem Gudang & Inventori',
+    desc: 'Stok real-time, purchase order, transfer antar gudang — tanpa lagi rekap manual tiap hari.',
+  },
+  {
+    icon: 'solar:users-group-two-rounded-linear',
+    title: 'HR & Portal Karyawan',
+    desc: 'Absensi, cuti, slip gaji, kontrak, dan onboarding dalam satu sistem yang bisa diakses dari mana saja.',
+  },
+  {
+    icon: 'solar:wallet-money-linear',
+    title: 'Manajemen Keuangan Internal',
+    desc: 'Kasbon, reimbursement, dan approval budget dengan alur yang jelas — tidak ada lagi yang terlewat.',
+  },
+  {
+    icon: 'solar:tag-price-linear',
+    title: 'Tracking Aset',
+    desc: 'Pantau lokasi, kondisi, dan jadwal maintenance aset perusahaan dari satu dashboard.',
+  },
+  {
+    icon: 'solar:chart-square-linear',
+    title: 'Dashboard Operasional',
+    desc: 'Laporan live untuk manajemen — data dari berbagai sumber, langsung tersaji tanpa compile manual.',
+  },
+];
 ---
 <section class="py-24 px-6 relative z-10 bg-gradient-to-b from-zinc-50/50 to-white/50 border-y border-zinc-100 backdrop-blur-sm">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 group">
-    <div class="md:col-span-5">
-      <h2 class="text-3xl md:text-4xl font-medium tracking-tight leading-tight text-zinc-950 transition-transform duration-700 group-hover:translate-x-2">
-        Purpose-Built Internal Applications
-      </h2>
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 group">
+      <div class="md:col-span-5">
+        <p class="text-xs font-medium tracking-widest text-zinc-400 uppercase mb-4">Yang kami bangun</p>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight leading-tight text-zinc-950 transition-transform duration-700 group-hover:translate-x-2">
+          Aplikasi Internal yang Dibangun untuk Cara Kerja Tim Anda
+        </h2>
+      </div>
+      <div class="md:col-span-7 space-y-4 text-base leading-relaxed mt-1 md:mt-0 text-zinc-500 relative">
+        <div class="absolute -left-6 top-0 w-1 h-full bg-gradient-to-b from-zinc-200 to-transparent rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top delay-100"></div>
+        <p class="transition-all duration-500 group-hover:text-zinc-700">
+          Pixelcraft membangun web dan mobile app yang dirancang khusus sesuai cara operasional tim Anda — dari dashboard internal, otomasi alur kerja, sistem approval, hingga tools lapangan.
+        </p>
+        <p class="transition-all duration-500 delay-100 group-hover:text-zinc-700">
+          Setiap proyek dibangun dari awal. Tidak ada template. Tidak ada fitur yang tidak Anda butuhkan.
+        </p>
+      </div>
     </div>
-    <div class="md:col-span-7 space-y-6 text-base leading-relaxed mt-1 md:mt-0 text-zinc-500 relative">
-      <div class="absolute -left-6 top-0 w-1 h-full bg-gradient-to-b from-zinc-200 to-transparent rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top delay-100"></div>
-      <p class="transition-all duration-500 group-hover:text-zinc-700">
-        Pixelcraft builds web and mobile applications designed specifically for how your teams operate. From internal dashboards and workflow automation to approval systems and field tools — we translate your operational requirements into software that works.
-      </p>
-      <p class="transition-all duration-500 delay-100 group-hover:text-zinc-700">
-        Every project is built from the ground up. No templates. No unnecessary features. No license fees for tools your people won't use.
-      </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {services.map((s) => (
+        <div class="group/card relative p-6 rounded-2xl border bg-white border-zinc-200/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-default">
+          <div class="absolute inset-0 bg-gradient-to-br from-zinc-50 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5 bg-zinc-100 text-zinc-950 group-hover/card:bg-zinc-950 group-hover/card:text-white transition-all duration-500">
+              <iconify-icon icon={s.icon} class="text-xl" style="stroke-width: 1.5;"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium tracking-tight mb-2 text-zinc-950">{s.title}</h3>
+            <p class="text-sm leading-relaxed text-zinc-500 group-hover/card:text-zinc-600 transition-colors duration-300">{s.desc}</p>
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

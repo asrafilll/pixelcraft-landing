@@ -4,21 +4,58 @@
   <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent"></div>
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 group">
     <div class="md:col-span-5">
+      <p class="text-xs font-medium tracking-widest text-zinc-400 uppercase mb-4">Mengapa custom?</p>
       <h2 class="text-3xl md:text-4xl font-medium tracking-tight leading-tight text-zinc-950 transition-transform duration-700 group-hover:translate-x-2">
-        The Real Cost of the Wrong Tool
+        Biaya Nyata dari Tools yang Salah
       </h2>
+
+      <!-- Comparison table -->
+      <div class="mt-8 overflow-hidden rounded-xl border border-zinc-200/60 text-xs">
+        <div class="grid grid-cols-4 bg-zinc-50 border-b border-zinc-200/60">
+          <div class="p-3 font-medium text-zinc-400"></div>
+          <div class="p-3 font-medium text-zinc-500 text-center">Low-Code</div>
+          <div class="p-3 font-medium text-zinc-500 text-center">ERP Besar</div>
+          <div class="p-3 font-medium text-zinc-950 text-center">Pixelcraft</div>
+        </div>
+        {[
+          ['Fleksibilitas', '❌', '❌', '✅'],
+          ['Harga terjangkau', '✅', '❌', '✅'],
+          ['Proses lokal', '❌', '❌', '✅'],
+          ['Support Bahasa Indonesia', '❌', '❌', '✅'],
+        ].map(([label, a, b, c]) => (
+          <div class="grid grid-cols-4 border-b border-zinc-100 last:border-0 hover:bg-zinc-50/50 transition-colors">
+            <div class="p-3 text-zinc-600 font-medium">{label}</div>
+            <div class="p-3 text-center text-zinc-400">{a}</div>
+            <div class="p-3 text-center text-zinc-400">{b}</div>
+            <div class="p-3 text-center font-medium text-zinc-950">{c}</div>
+          </div>
+        ))}
+      </div>
     </div>
     <div class="md:col-span-7 space-y-6 text-base leading-relaxed mt-1 md:mt-0 text-zinc-500 relative">
       <div class="absolute -left-6 top-0 w-1 h-full bg-gradient-to-b from-zinc-200 to-transparent rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top"></div>
       <p class="transition-all duration-500 group-hover:text-zinc-700">
-        Licensing fees are visible. The hidden costs of a poor-fit tool are not.
+        Biaya lisensi terlihat jelas. Biaya tersembunyi dari tools yang tidak cocok — tidak.
       </p>
       <p class="transition-all duration-500 delay-75 group-hover:text-zinc-700">
-        When employees spend 20 minutes extracting data from a system that should surface it automatically — that time accumulates. When an approval process requires five emails because the tool doesn't support the right workflow — those delays compound. When adoption fails and teams revert to spreadsheets — the original investment is lost entirely.
+        Low-code terlalu terbatas untuk proses Anda yang kompleks. ERP besar terlalu mahal dan kaku untuk UMKM Indonesia. Pixelcraft ada di tengah: custom tools yang pas di kantong dan benar-benar sesuai proses lokal.
       </p>
       <p class="transition-all duration-500 delay-150 group-hover:text-zinc-700 font-medium text-zinc-600">
-        Custom software eliminates the gap between how your business works and how your software works. The upfront investment is offset by the removal of workarounds, the reduction in manual effort, and the increase in data reliability.
+        Software custom menghilangkan gap antara cara bisnis Anda bekerja dan cara software Anda bekerja. Investasi awal diimbangi dengan hilangnya workaround, berkurangnya kerja manual, dan meningkatnya keandalan data.
       </p>
+
+      <!-- Grant callout -->
+      <div class="mt-2 p-5 rounded-2xl border border-zinc-200/60 bg-zinc-50/60 flex gap-4 items-start hover:border-zinc-300 hover:bg-zinc-50 transition-all duration-300">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-zinc-100 text-zinc-700 shrink-0 mt-0.5">
+          <iconify-icon icon="solar:diploma-linear" class="text-lg" style="stroke-width: 1.5;"></iconify-icon>
+        </div>
+        <div>
+          <p class="text-sm font-medium text-zinc-800 mb-1">Bisa dibantu pakai dana pemerintah</p>
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Program Making Indonesia 4.0 dan subsidi digitalisasi UMKM bisa menanggung sebagian biaya sistem Anda. Kami bantu proses pengajuannya — gratis.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
